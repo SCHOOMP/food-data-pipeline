@@ -1,5 +1,7 @@
-# Install with:  pip install -r requirements.txt
-
-requests==2.32.3        # HTTP calls to the Open Food Facts API
-python-dotenv==1.0.1    # load settings/secrets from a .env file
-
+certifi==2026.5.20
+charset-normalizer==3.4.7
+idna==3.17
+psycopg2-binary==2.9.12
+python-dotenv==1.0.1
+requests==2.32.3
+urllib3==2.7.0
