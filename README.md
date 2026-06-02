@@ -113,7 +113,7 @@ git clone https://github.com/<your-username>/food-data-pipeline.git
 cd food-data-pipeline
 
 # 2. Create your environment file from the template and fill in values
-cp .env.example .env
+cp ..env .env
 
 # 3. Start the local stack (warehouse, orchestrator, etc.)
 docker compose up
@@ -132,8 +132,8 @@ Once running, open the orchestrator UI to watch the pipeline execute and inspect
 
 The project is built in phases. Completed work is checked off below.
 
-- [ ] **Phase 0 — Project setup:** repo, environment, README, base structure
-- [ ] **Phase 1 — Extract:** pull and paginate food data from the Open Food Facts API in Python
+- [x] **Phase 0 — Project setup:** repo, environment, README, base structure
+- [x] **Phase 1 — Extract:** pull and paginate food data from the Open Food Facts API in Python
 - [ ] **Phase 2 — Load:** store raw responses (NoSQL) and a structured copy (SQL)
 - [ ] **Phase 3 — Transform:** build staging, dimension, and fact models in dbt, with tests and docs
 - [ ] **Phase 4 — Orchestrate:** schedule the pipeline and make runs idempotent; containerize with Docker Compose
