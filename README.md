@@ -140,6 +140,7 @@ The project is built in phases. Completed work is checked off below.
 - [ ] **Phase 5 — Cloud:** deploy on GCP (Cloud Storage, BigQuery, Cloud Composer)
 - [ ] **Phase 6 — Streaming (stretch):** add a Kafka stream and consumer, deployed on Kubernetes (GKE)
 
+
 ## Engineering practices
 
 This project is intentionally built to reflect how real data teams work:
