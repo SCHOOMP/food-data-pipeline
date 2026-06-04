@@ -1,7 +1,7 @@
-# Runs a Postgres database inside Docker so I don't have to install it on my Mac.
-# Start it with:  docker compose up -d
-# Stop it with:   docker compose down      (my data is kept)
-# Wipe it with:   docker compose down -v   (deletes the data too)
+# Runs Postgres AND MongoDB inside Docker so I don't have to install them on my Mac.
+# Start them with:  docker compose up -d
+# Stop them with:   docker compose down      (my data is kept)
+# Wipe them with:   docker compose down -v   (deletes the data too)
 
 services:
   postgres:
@@ -15,7 +15,29 @@ services:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 
-# a named volume keeps the database data even when the container stops
+  mongodb:
+    image: mongo:7
+    container_name: food_mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodata:/data/db
+    healthcheck:
+      test: ["CMD-SHELL", "mongosh --quiet --eval 'db.adminCommand(\"ping\")'"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+# named volumes keep the database data even when the containers stop
 volumes:
   pgdata:
+  mongodata:
