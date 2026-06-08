@@ -135,7 +135,7 @@ The project is built in phases. Completed work is checked off below.
 - [x] **Phase 0 — Project setup:** repo, environment, README, base structure
 - [x] **Phase 1 — Extract:** pull and paginate food data from the Open Food Facts API in Python
 - [x] **Phase 2 — Load:** store raw responses (NoSQL) and a structured copy (SQL)
-- [ ] **Phase 3 — Transform:** build staging, dimension, and fact models in dbt, with tests and docs
+- [Current ] **Phase 3 — Transform:** build staging, dimension, and fact models in dbt, with tests and docs
 - [ ] **Phase 4 — Orchestrate:** schedule the pipeline and make runs idempotent; containerize with Docker Compose
 - [ ] **Phase 5 — Cloud:** deploy on GCP (Cloud Storage, BigQuery, Cloud Composer)
 - [ ] **Phase 6 — Streaming (stretch):** add a Kafka stream and consumer, deployed on Kubernetes (GKE)
